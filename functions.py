@@ -1,7 +1,33 @@
 import numpy as np
 from random import random
-from parameters import N, dt, g, r
+from input import N, dt, g, r
+import os
 
+def make_dir(dir):
+    # Check if there are any problems for directory results and create it
+    if os.path.exists(dir):
+        dirControl = True
+        while dirControl:
+            choice = input("""
+The directory {} already exists. I want to... 
+    ...rename the results directory (R)
+    ...overwrite the existing directory (O)
+    ...exit program (X)
+>> """.format(dir)).lower().strip()
+            if choice.startswith('r'):
+                dir = input('\nIntroduce new directory >> ')
+                os.makedirs(dir)
+                dirControl = False
+            elif choice.startswith('o'):
+                print('\nOverwriting existing directory.')
+                dirControl = False
+            elif choice.startswith('x'):
+                print('\nEnd Program\n')
+                quit()
+    else:
+        os.makedirs(dir)
+    return dir
+    
 def get_ini(n):
     return np.array([random() for i in range(n)]), np.array([random() * np.pi * 2 for i in range(n)])
 

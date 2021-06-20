@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from random import seed
-from parameters import *
+from input import *
 import functions as f
 from shutil import copy
 

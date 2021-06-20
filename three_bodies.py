@@ -1,8 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from random import seed
-from parameters import *
+from input import *
 import functions as f
+
+
 
 seed(seed_n)
 n_iter = 10
@@ -24,11 +26,11 @@ for a in all_a:
             t_env = f.period(t_env + dt)
             t_total = (i + 1) * dt
         pops_all.append(pops)
-        if (j + 1) % 5: print("\tProgress {:.2f} %".format(j / n_iter * 100), end="\r", flush=True)
+        if (j + 1) % 5: print("\tProgress {:.2f} %".format((j + 1) / n_iter * 100), end="\r", flush=True)
     print("\tProgress 100.00 %")
     np.array(pops_all)
     avgs = np.sum(pops_all, axis=0) / n_iter
-    print("\tAverages are {}".format(avgs))
+    print("\tAverages are {:.2f}".format(avgs))
 
 fig = plt.figure(figsize=(6.4*1.5, 4.8))
 ax = fig.add_subplot(121)
