@@ -1,13 +1,35 @@
+import numpy as np
 
 N = 2  # Nº of species
 
-deltas = [0.1, 0.2]  # Phase shifts
+deltas = np.array(
+    [0.1, -0.4]  # Phase shifts for N = 2, 3, ...
+  )
 
-r = 1  # Environment parameter
-g = 1  # Growth parameter
+r = 0.7  # Environment parameter
+g = 1    # Growth parameter
 a = 1  # Growth amplitude
-b = 1  # Competition amplitude
+b = 0.6  # Competition amplitude
 
 dt = 0.01
-i_max = 1000
+i_max = 10000
 seed_n = 12345
+
+# Two bodies conditions
+# Keep everything fixed and change delta 1
+# For 0.4 < delta 1 < 0.0631 only one survives
+# For 0.0631 < delta 1 < 0.4 both survive
+# N = 2  # Nº of species
+
+# deltas = np.array(
+#     [0.05, -0.4]  # Phase shifts for N = 2, 3, ...
+#   )
+
+# r = 0.7  # Environment parameter
+# g = 1    # Growth parameter
+# a = 1  # Growth amplitude
+# b = 0.6  # Competition amplitude
+
+# dt = 0.01
+# i_max = 10000
+# seed_n = 12345
