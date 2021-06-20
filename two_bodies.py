@@ -74,7 +74,7 @@ ax_thetas.set_xlabel("Time (A.U.)")
 ax_thetas.legend()
 
 ax_ratios.set_title("Asymptotical ratio")
-ax_thetas.set_xlabel("Time (A.U.)")
+ax_ratios.set_xlabel("Time (A.U.)")
 ax_ratios.legend()
 # plt.show()
 
