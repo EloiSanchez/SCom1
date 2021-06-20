@@ -1,12 +1,13 @@
 import numpy as np
 
-N = 2  # Nº of species
+N = 3  # Nº of species
 
 deltas = np.array(
-    [0.1, -0.4]  # Phase shifts for N = 2, 3, ...
+    # [0.27, -0.3]  # Phase shifts for N = 2, 3, ...
+    [-0.27, 0, 0.27]
   )
 
-r = 0.7  # Environment parameter
+r = 0.333  # Environment parameter
 g = 1    # Growth parameter
 a = 1  # Growth amplitude
 b = 0.6  # Competition amplitude
