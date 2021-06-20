@@ -3,6 +3,7 @@ import numpy as np
 from random import seed
 from parameters import *
 import functions as f
+from shutil import copy
 
 results_dir = f.make_dir(results_dir)
 
@@ -78,9 +79,29 @@ ax_ratios.set_xlabel("Time (A.U.)")
 ax_ratios.legend()
 # plt.show()
 
+copy("parameters.py", results_dir + "/")
+
+file_control = open(results_dir + "/info.txt", mode="w")
+file_control.write("TWO BODIES PARAMETERS\n")
+file_control.write("seed = {}\n".format(seed_n))
+file_control.write("delta 1 = {:.3f}, delta 2 = {:.3f}\n".format(deltas[0], deltas[1]))
+file_control.write("alpha 1 = {:.3f}, alpha 2 = {:.3f}\n".format(alphas[0], alphas[1]))
+file_control.write("w = {:.3f}\n".format(v))
+file_control.write("v = {:.3f}\n".format(w))
+file_control.write("w/v = {:.3f}\n".format(wv))
+file_control.write("alpha 2 / alpha 1 = {:.3f}\n".format(a2a1))
+if wv < a2a1:
+    file_control.write("Both species should survive\n")
+    file_control.write("and converge to {:.3f}\n".format(ratio))
+elif wv > a2a1:
+    file_control.write("Only 1 should survive\n")
+file_control.close()
+
 file_pop = open(results_dir + "/populations.txt", mode="w")
 file_thetas = open(results_dir + "/thetas.txt", mode="w")
 for i in range(i_max):
     file_pop.write("{} {}\n".format(t_all[i], " ".join(map(str, pops_all[i,:]))))
-    file_thetas.write("{} {}\n".format(t_all[i], " ".join(map(str, thetas_all[i,:]))))
+    file_thetas.write("{} {}\n".format(t_all[i], " ".join(map(str, thetas_all[i,:]))))    
+[f.close() for f in (file_pop, file_thetas)]
+
 fig.savefig(results_dir + "/plot.png", dpi=600)
