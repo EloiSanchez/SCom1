@@ -79,7 +79,7 @@ ax_ratios.set_xlabel("Time (A.U.)")
 ax_ratios.legend()
 # plt.show()
 
-copy("parameters.py", results_dir + "/")
+copy("input.py", results_dir + "/")
 
 file_control = open(results_dir + "/info.txt", mode="w")
 file_control.write("TWO BODIES PARAMETERS\n")
