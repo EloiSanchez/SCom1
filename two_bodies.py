@@ -4,6 +4,8 @@ from random import seed
 from parameters import *
 import functions as f
 
+results_dir = f.make_dir(results_dir)
+
 # Initial parameters
 seed(seed_n)
 
@@ -56,16 +58,29 @@ ax_pops = fig.add_subplot(131)
 ax_thetas = fig.add_subplot(132)
 ax_ratios = fig.add_subplot(133)
 
-ax_thetas.plot(t_all, t_env_all, label="Env", c="green")
-
 for i in range(N):
-    ax_pops.plot(t_all, pops_all[:, i], label="{}".format(i))
-    ax_thetas.plot(t_all, thetas_all[:, i], label="theta {}".format(i))
+    ax_pops.plot(t_all, pops_all[:, i], label=r"$x_{}$".format(i+1))
+    ax_thetas.plot(t_all, thetas_all[:, i], label=r"$\theta_{}-t$".format(i+1))
 
-ax_ratios.plot(t_all, ratios_all)
-ax_ratios.hlines(ratio, 0, np.max(t_all), colors="black", linestyles="dashed")
+ax_ratios.plot(t_all, ratios_all, label="Numerical")
+ax_ratios.hlines(ratio, 0, np.max(t_all), colors="black", linestyles="dashed", label="Analytical")
 
+ax_pops.set_title("Population evolution")
+ax_pops.set_xlabel("Time (A.U.)")
 ax_pops.legend()
+
+ax_thetas.set_title("Phase difference evolution")
+ax_thetas.set_xlabel("Time (A.U.)")
 ax_thetas.legend()
+
+ax_ratios.set_title("Asymptotical ratio")
+ax_thetas.set_xlabel("Time (A.U.)")
 ax_ratios.legend()
-plt.show()
+# plt.show()
+
+file_pop = open(results_dir + "/populations.txt", mode="w")
+file_thetas = open(results_dir + "/thetas.txt", mode="w")
+for i in range(i_max):
+    file_pop.write("{} {}\n".format(t_all[i], " ".join(map(str, pops_all[i,:]))))
+    file_thetas.write("{} {}\n".format(t_all[i], " ".join(map(str, thetas_all[i,:]))))
+fig.savefig(results_dir + "/plot.png", dpi=600)
