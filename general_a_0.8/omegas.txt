@@ -1,1 +1,7 @@
-species 1 -> omega 0.7002999999999999species 2 -> omega 0.8001999999999999species 3 -> omega 0.9001species 4 -> omega 1.0species 5 -> omega 1.0999species 6 -> omega 1.1998000000000002species 7 -> omega 1.2997
+species 1 -> omega 0.7002999999999999
+species 2 -> omega 0.8001999999999999
+species 3 -> omega 0.9001
+species 4 -> omega 1.0
+species 5 -> omega 1.0999
+species 6 -> omega 1.1998000000000002
+species 7 -> omega 1.2997

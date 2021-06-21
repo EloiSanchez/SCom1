@@ -56,11 +56,11 @@ copy("input.py", results_dir + "/")
 
 file_pop = open(results_dir + "/populations.txt", mode="w")
 file_thetas = open(results_dir + "/thetas.txt", mode="w")
-for i in range(i_max):
+for i in range(int(i_max/print_every) + 1):
     file_pop.write("{} {}\n".format(t_all[i], " ".join(map(str, pops_all[i,:]))))
     file_thetas.write("{} {}\n".format(t_all[i], " ".join(map(str, thetas_all[i,:]))))    
 [f.close() for f in (file_pop, file_thetas)]
 file_omegas = open(results_dir + "/omegas.txt", mode="w")
 for i in range(N):
-    file_omegas.write("species {} -> omega {}".format(i+1, omegas[i]))
+    file_omegas.write("species {} -> omega {}\n".format(i+1, omegas[i]))
 file_omegas.close()

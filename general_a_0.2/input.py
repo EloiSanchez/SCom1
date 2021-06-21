@@ -14,6 +14,8 @@ b = 0.6  # Competition amplitude
 
 dt = 0.01
 i_max = 70000
+print_every = 10
 seed_n = 12345
 
 results_dir = "general_a_0.2"
+

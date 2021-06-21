@@ -44,6 +44,7 @@ t_total = 0
 for i in range(i_max):
     pops, thetas = f.rk4(pops, thetas, omegas, t_env, a, b)
     t_env = f.period(t_env + dt)
+    if (i+1) % 50 == 0: f.progress(i)
     if (i+1) % print_every == 0 or i == 0:    
         t_total = (i + 1) * dt
         pops_all.append(pops)
@@ -100,7 +101,7 @@ file_control.close()
 
 file_pop = open(results_dir + "/populations.txt", mode="w")
 file_thetas = open(results_dir + "/thetas.txt", mode="w")
-for i in range(i_max):
+for i in range(int(i_max / print_every) + 1):
     file_pop.write("{} {}\n".format(t_all[i], " ".join(map(str, pops_all[i,:]))))
     file_thetas.write("{} {}\n".format(t_all[i], " ".join(map(str, thetas_all[i,:]))))    
 [f.close() for f in (file_pop, file_thetas)]

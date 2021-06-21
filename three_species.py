@@ -8,7 +8,7 @@ from shutil import copy
 results_dir = f.make_dir(results_dir)
 
 seed(seed_n)
-n_iter = 1
+n_iter = 10
 all_a = np.array(
     [0, 0.1, 0.2, 0.3, 0.38, 0.4, 0.43, 0.5, 0.58 , 0.63, 0.7]
 )
@@ -20,16 +20,18 @@ for a in all_a:
     pops_all = []
     t_env = 0
     t_total = 0
-    print("Starting a = {}".format(a))
+    print("\nStarting a = {}".format(a))
     for j in range(n_iter):
         pops, thetas = f.get_ini(3)
         for i in range(i_max):
             pops, thetas = f.rk4(pops, thetas, omegas, t_env, a, b)
             t_env = f.period(t_env + dt)
             t_total = (i + 1) * dt
+            if (j + 1) % 100:
+                print("\tIter {}. Progress {:.2f} %".format(j+1,i / i_max * 100),\
+                    end="\r", flush=True)
         pops_all.append(pops)
-        if (j + 1) % 100: f.progress(i)
-    print("\tProgress 100.00 %")
+    print("\tIter {}.Progress 100.00 %".format(j+1))
     np.array(pops_all)
     avgs = np.sum(pops_all, axis=0) / n_iter
     print("\tAverages are {}".format(avgs))
