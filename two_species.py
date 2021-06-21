@@ -44,12 +44,13 @@ t_total = 0
 for i in range(i_max):
     pops, thetas = f.rk4(pops, thetas, omegas, t_env, a, b)
     t_env = f.period(t_env + dt)
-    t_total = (i + 1) * dt
-    pops_all.append(pops)
-    thetas_all.append([f.subtract_ang(x) for x in np.abs(thetas - t_env)])
-    t_env_all.append(t_env)
-    t_all.append(t_total)
-    ratios_all.append(pops[0] - pops[1])
+    if (i+1) % print_every == 0 or i == 0:    
+        t_total = (i + 1) * dt
+        pops_all.append(pops)
+        thetas_all.append([f.subtract_ang(x) for x in np.abs(thetas - t_env)])
+        t_env_all.append(t_env)
+        t_all.append(t_total)
+        ratios_all.append(pops[0] - pops[1])
 
 pops_all, thetas_all, ratios_all = [np.array(x) for x in (pops_all, thetas_all, ratios_all)]
 

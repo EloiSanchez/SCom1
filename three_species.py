@@ -12,6 +12,7 @@ n_iter = 1
 all_a = np.array(
     [0, 0.1, 0.2, 0.3, 0.38, 0.4, 0.43, 0.5, 0.58 , 0.63, 0.7]
 )
+omegas = np.ones(N) + deltas
 
 # Run all dynamics
 avgs_all = []
@@ -27,7 +28,7 @@ for a in all_a:
             t_env = f.period(t_env + dt)
             t_total = (i + 1) * dt
         pops_all.append(pops)
-        if (j + 1) % 5: print("\tProgress {:.2f} %".format((j + 1) / n_iter * 100), end="\r", flush=True)
+        if (j + 1) % 100: f.progress(i)
     print("\tProgress 100.00 %")
     np.array(pops_all)
     avgs = np.sum(pops_all, axis=0) / n_iter
