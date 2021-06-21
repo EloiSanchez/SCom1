@@ -15,7 +15,6 @@ all_a = np.array(
 )
 # all_a = np.sort(all_a)
 
-omegas = np.ones(N) + deltas
 avgs_all = []
 
 for a in all_a:

@@ -1,6 +1,6 @@
 import numpy as np
 from random import random
-from input import N, dt, g, r
+from input import N, dt, g, r, i_max
 import os
 
 def make_dir(dir):
@@ -85,3 +85,6 @@ def subtract_ang(a1, a2 = 0.):
     elif x > np.pi:
         x = 2 * np.pi - x
     return x
+
+def progress(i):
+    print("Progress {:.2f} %".format(i/i_max*100), end="\r", flush=True)
