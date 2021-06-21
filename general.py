@@ -30,6 +30,8 @@ for i in range(i_max):
 
 pops_all, thetas_all = [np.array(x) for x in (pops_all, thetas_all)]
 
+# Plots and results
+
 fig = plt.figure(figsize=(6.4*2, 4.8))
 ax_pops = fig.add_subplot(121)
 ax_thetas = fig.add_subplot(122)

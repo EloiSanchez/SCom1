@@ -9,14 +9,12 @@ results_dir = f.make_dir(results_dir)
 
 seed(seed_n)
 n_iter = 1
-# all_a = np.linspace(0, b + 0.5, 10)
 all_a = np.array(
     [0, 0.1, 0.2, 0.3, 0.38, 0.4, 0.43, 0.5, 0.58 , 0.63, 0.7]
 )
-# all_a = np.sort(all_a)
 
+# Run all dynamics
 avgs_all = []
-
 for a in all_a:
     pops_all = []
     t_env = 0
@@ -37,6 +35,8 @@ for a in all_a:
     avgs_all.append(avgs)
 
 avgs_all = np.array(avgs_all)
+
+# Plots and results
 
 fig = plt.figure(figsize=(6.4, 4.8))
 ax = fig.add_subplot()
