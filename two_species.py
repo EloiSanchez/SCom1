@@ -104,4 +104,4 @@ for i in range(i_max):
     file_thetas.write("{} {}\n".format(t_all[i], " ".join(map(str, thetas_all[i,:]))))    
 [f.close() for f in (file_pop, file_thetas)]
 
-fig.savefig(results_dir + "/plot.png", dpi=600)
+fig.savefig(results_dir + "/plot.png")

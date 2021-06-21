@@ -1,10 +1,10 @@
 import numpy as np
 
-N = 2  # Nº of species
+N = 3  # Nº of species
 
 deltas = np.array(
-    [0.27, -0.3]  # Phase shifts for N = 2, 3, ...
-    # [-0.27, 0, 0.27]
+    [-0.27, 0, 0.27]   # Phase shifts for N = 3
+    # [0.27, -0.3]     # Phase shifts for N = 2
   )
 
 r = 0.333  # Environment parameter
@@ -16,7 +16,7 @@ dt = 0.01
 i_max = 10000
 seed_n = 12345
 
-results_dir = "two_bodies"
+results_dir = "three_bodies"
 
 # Two bodies conditions
 # Keep everything fixed and change delta 1
