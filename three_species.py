@@ -40,7 +40,7 @@ for a in all_a:
 avgs_all = np.array(avgs_all)
 
 fig = plt.figure(figsize=(6.4*1.5, 4.8))
-ax = fig.add_subplot(121)
+ax = fig.add_subplot()
 
 for i in range(N):
     ax.scatter(all_a, avgs_all[:,i], label=r"$x_{}$".format(i+1))
