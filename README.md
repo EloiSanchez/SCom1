@@ -34,4 +34,11 @@ The plot wich reproduces **Fig. 1** from the article is obtained in **three_bodi
 ![alt text](https://github.com/EloiSanchez/SCom1/blob/main/three_bodies/populations.png) "Reproduction of Fig. 1 of the article"
 
 ### General
-TODO
+This code reproduces the results of **Section 7** of the paper, although the Figs. presented there are not the created by this code.
+
+In our case, the dynamics of the conditions given in the input are returned in the plot.
+
+**Example with `a=0.2`**
+
+
+**Example with `a=0.8`**
