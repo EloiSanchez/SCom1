@@ -39,11 +39,14 @@ for a in all_a:
 
 avgs_all = np.array(avgs_all)
 
-fig = plt.figure(figsize=(6.4*1.5, 4.8))
+fig = plt.figure(figsize=(6.4, 4.8))
 ax = fig.add_subplot()
 
 for i in range(N):
     ax.scatter(all_a, avgs_all[:,i], label=r"$x_{}$".format(i+1))
+
+ax.set_xlabel(r"$a$")
+ax.set_title(r"Populations after phase adaptation with different $a$")
 
 ax.legend()
 # plt.show()
