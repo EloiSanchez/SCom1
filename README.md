@@ -3,7 +3,7 @@
 This code was made for the subject **Complex Systems** of the **Computational Modelling** master in 2021.
 
 ## What does it do
-This code simulates the evolution of different communities of populations with different addaptability to an environmental cycle. The equations and models used where taken from *[Hiroaki Daido, J Theor Biol (2002) __217__ 425-442](https://doi.org/10.1006/jtbi.2002.3050)*.
+This code simulates the evolution of different communities of populations with different addaptability to an environmental cycle. The equations and models used were taken from *[Hiroaki Daido, J Theor Biol (2002) __217__ 425-442](https://doi.org/10.1006/jtbi.2002.3050)*.
 
 ## Aims
 1. Numerically reproduce the behaviour found analytically in **Section 3** of the article regarding the dynamics of two species.
