@@ -21,14 +21,14 @@ Modify the `input.py` ensuring that `N=3` and the `deltas` variable has length t
 Modify the `input.py` at will. Note that the `deltas` variable will be ignored and overwritten by random values between 0 and 2pi. Execute `python3 general.py`. The results will be saved in the `results_dir` given in `input.py`.
 
 ## Results
-### Three Bodies
+### Two species
 The plot showing the results of the dynamics in the example directory **two_bodies** is:
 
 ![Broken link](https://github.com/EloiSanchez/SCom1/blob/main/two_species/plot.png) "Results of two species dynamics"
 
 In this example, the two species should survive (as it can be seen) with a ratio between the two that tends to the analytical one.
 
-### Two Bodies
+### Three species
 The plot wich reproduces **Fig. 1** from the article is obtained in **three_bodies**.
 
 ![Broken link](https://github.com/EloiSanchez/SCom1/blob/main/three_species/populations.png) "Reproduction of Fig. 1 of the article"
