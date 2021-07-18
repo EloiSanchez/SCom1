@@ -34,7 +34,7 @@ The plot wich reproduces **Fig. 1** from the article is obtained in **three_bodi
 ![Broken link](https://github.com/EloiSanchez/SCom1/blob/main/three_species/populations.png) "Reproduction of Fig. 1 of the article"
 
 ### General
-This code reproduces the results of **Section 7** of the paper, although the Figs. presented there are not the created by this code.
+This code reproduces the results of **Section 6** of the paper, although the Figs. presented there are not the created by this code.
 
 In our case, the dynamics of the conditions given in the input are returned in the plot.
 
