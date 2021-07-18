@@ -13,7 +13,7 @@ seed(seed_n)
 pops, thetas = f.get_ini(N)
 
 # Obtain analytical results from paper
-alphas = g * f.get_A(np.arcsin(deltas / r))
+alphas = g * f.get_A(np.arcsin(deltas / r), a=a)
 v = 1 + b * np.cos(0)
 phi0 = np.arcsin(deltas[0] / r)
 phi1 = np.arcsin(deltas[1] / r)
